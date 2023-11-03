@@ -13,7 +13,6 @@ export default defineConfig(({ command }) => {
       sourcemap: true,
 
       rollupOptions: {
-        external: ['simplelightbox','simplelightbox/dist/simple-lightbox.min.css'],
         input: glob.sync('./src/*.html'),
         output: {
           manualChunks(id) {
