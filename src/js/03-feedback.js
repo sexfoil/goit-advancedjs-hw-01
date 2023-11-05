@@ -7,11 +7,13 @@ const email = form.elements.email;
 const message = form.elements.message;
 
 const onSubmitFeedback = event => {
-    event.preventDefault();
-    console.log(fedbackState);
-    localStorage.removeItem(LS_FEEDBACK_STATE_KEY);
-    updateFeedbackState("");
-    updateFeedbackForm();
+    if (message.value.trim().length > 0) {        
+        event.preventDefault();
+        console.log(fedbackState);
+        localStorage.removeItem(LS_FEEDBACK_STATE_KEY);
+        updateFeedbackState("");
+        updateFeedbackForm();
+    }        
 }
 
 const onInput = throttle(() => saveFeedbackState(), 500);
